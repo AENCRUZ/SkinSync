@@ -325,7 +325,7 @@ section { padding: 64px 0; }
 .step:not(:last-child)::after {
   content: "";
   position: absolute;
-  top: 18.7px;
+  top: 19px;
   left: 40px;
   right: 0;
   height: 3.7px;
@@ -628,6 +628,107 @@ th { color: var(--navy); font-family: 'Montserrat', sans-serif; font-size: 0.8re
   margin-bottom: 20px;
 }
 
+/* ---------- Send Summary (contact clinic directly) ---------- */
+.send-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.send-option {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  text-align: center;
+  background: var(--white);
+}
+.send-option .send-icon {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--pale-cyan);
+  color: var(--blue);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px;
+}
+.send-option .send-icon svg { width: 22px; height: 22px; }
+.send-option h4 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--navy);
+  margin: 0 0 6px;
+}
+.send-option p { font-size: 0.84rem; margin-bottom: 16px; }
+.send-option .btn { width: 100%; }
+.copy-confirm {
+  display: none;
+  font-size: 0.8rem;
+  color: var(--success);
+  font-weight: 600;
+  margin-top: 8px;
+}
+.copy-confirm.show { display: block; }
+
+/* ---------- Chat: photo attach + image messages ---------- */
+.msg-photo-wrap { align-self: flex-end; max-width: 78%; }
+.msg-photo {
+  width: 160px;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-md);
+  border-bottom-right-radius: 4px;
+  background: linear-gradient(155deg, var(--light-cyan), var(--cyan));
+  display: flex; align-items: center; justify-content: center;
+  color: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+.msg-photo svg { width: 34px; height: 34px; }
+.msg-caption { font-size: 0.78rem; color: var(--ink-soft); text-align: right; margin-top:6px; }
+
+.attach-toggle { display: none; }
+.attach-panel {
+  display: none;
+  padding: 18px 24px;
+  border-top: 1px solid var(--border);
+  background: var(--pale-cyan);
+}
+.attach-toggle:checked ~ .attach-panel { display: block; }
+.attach-panel-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.attach-option {
+  flex: 1;
+  min-width: 160px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border: 1.5px dashed var(--cyan);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--navy);
+}
+.attach-option svg { width: 20px; height: 20px; color: var(--blue); flex-shrink: 0; }
+.attach-option input[type="file"] {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+.attach-panel .helper { margin: 10px 0 0; }
+.icon-btn.active-toggle { background: var(--pale-cyan); }
+
+.chat-cta {
+  border-top: 1px solid var(--border);
+  background: var(--white);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.chat-cta p { margin: 0; font-size: 0.88rem; }
+
 /* ---------- Footer ---------- */
 footer { background: var(--navy); color: var(--white); padding: 48px 0 28px; margin-top: auto;}
 footer .wrap { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
@@ -752,6 +853,12 @@ footer .brand {
   .list-row { flex-direction: column; align-items: stretch; text-align: left; gap: 12px; }
 
   table { display: block; overflow-x: auto; white-space: nowrap; }
+
+  .send-options { grid-template-columns: 1fr; }
+  .attach-panel { padding: 14px 16px; }
+  .attach-panel-row { flex-direction: column; }
+  .chat-cta { flex-direction: column; align-items: stretch; text-align: center; }
+  .msg-photo { width: 120px; }
 
   footer .wrap { flex-direction: column; gap: 28px; }
   .footer-links { gap: 14px 20px; }

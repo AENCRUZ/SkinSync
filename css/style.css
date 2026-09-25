@@ -774,7 +774,6 @@ footer .brand {
   transform: translateY(-50%);
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease;
 }
-/* Hover/focus affects only the arrow icon — the select box itself stays visually stable */
 .select-wrap:hover .select-arrow {
   color: var(--blue);
   transform: translateY(-40%);

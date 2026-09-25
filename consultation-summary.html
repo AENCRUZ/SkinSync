@@ -78,13 +78,36 @@
       </ul>
     </div>
 
-    <div style="display:flex; gap:12px; flex-wrap:wrap;">
+    <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
       <a href="clinic-finder.html" class="btn btn-primary">Find a Dermatologist</a>
-      <a href="consultation-summary.html" class="btn btn-secondary">Save Summary</a>
+      <a class="btn btn-secondary" download="skinsync-consultation-summary.txt" href="data:text/plain;charset=utf-8,SKINSYNC%20Consultation%20Summary%0APatient%3A%20Juan%20Dela%20Cruz%0A%0AMAIN%20CONCERN%0ARed%2C%20itchy%20patch%20of%20skin%20on%20the%20forearm.%0A%0ASYMPTOMS%20REPORTED%0ARedness%2C%20itching%2C%20mild%20swelling.%0A%0ADURATION%0AApproximately%205%20days.%0A%0AAFFECTED%20AREA%0ALeft%20forearm%2C%20inner%20side.%0A%0ATRIGGERS%20/%20RECENT%20CHANGES%0ANew%20laundry%20detergent%20introduced%20last%20week.%0A%0AIMAGE%20OBSERVATIONS%20%28general%2C%20non-diagnostic%29%0ASlightly%20raised%2C%20reddened%20patch%20with%20an%20irregular%20but%20well-defined%20border.%20No%20visible%20open%20wound.%0A%0AQUESTIONS%20TO%20DISCUSS%20WITH%20YOUR%20DERMATOLOGIST%0A-%20Could%20the%20new%20detergent%20be%20the%20cause%3F%0A-%20Is%20any%20treatment%20needed%2C%20or%20should%20it%20be%20monitored%3F%0A-%20Are%20there%20signs%20that%20would%20require%20urgent%20attention%3F%0A%0A---%0APrepared%20using%20SKINSYNC%2C%20an%20AI-assisted%20platform.%20This%20is%20general%20information%20only%20and%20is%20not%20a%20medical%20diagnosis.">Download as File</a>
+      <button type="button" class="btn btn-ghost" onclick="copySkinsyncSummary(this)">Copy Summary</button>
       <a href="ai-assistant-intro.html" class="btn btn-ghost">Start Over</a>
     </div>
+    <div class="copy-confirm" style="margin-top:12px;">Copied to clipboard.</div>
   </div>
 </section>
+
+<script>
+function copySkinsyncSummary(btn) {
+  var text = "SKINSYNC Consultation Summary\nPatient: Juan Dela Cruz\n\nMAIN CONCERN\nRed, itchy patch of skin on the forearm.\n\nSYMPTOMS REPORTED\nRedness, itching, mild swelling.\n\nDURATION\nApproximately 5 days.\n\nAFFECTED AREA\nLeft forearm, inner side.\n\nTRIGGERS / RECENT CHANGES\nNew laundry detergent introduced last week.\n\nIMAGE OBSERVATIONS (general, non-diagnostic)\nSlightly raised, reddened patch with an irregular but well-defined border. No visible open wound.\n\nQUESTIONS TO DISCUSS WITH YOUR DERMATOLOGIST\n- Could the new detergent be the cause?\n- Is any treatment needed, or should it be monitored?\n- Are there signs that would require urgent attention?\n\n---\nPrepared using SKINSYNC, an AI-assisted platform. This is general information only and is not a medical diagnosis.";
+  var confirm = document.querySelector('.copy-confirm');
+  function showConfirm() {
+    if (confirm) {
+      confirm.classList.add('show');
+      setTimeout(function () { confirm.classList.remove('show'); }, 2500);
+    }
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(showConfirm).catch(function () {
+      if (confirm) { confirm.textContent = "Copy not supported in this browser."; confirm.classList.add('show'); }
+    });
+  } else if (confirm) {
+    confirm.textContent = "Copy not supported in this browser.";
+    confirm.classList.add('show');
+  }
+}
+</script>
 
 <footer>
   <div class="wrap">

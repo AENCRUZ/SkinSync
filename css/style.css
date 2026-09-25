@@ -863,3 +863,42 @@ footer .brand {
   footer .wrap { flex-direction: column; gap: 28px; }
   .footer-links { gap: 14px 20px; }
 }
+
+.chatpage-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 0;
+}
+.chatpage-shell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  width: 100%;
+  max-width: var(--max-narrow);
+  margin: 0 auto;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+.chatpage-shell .chat-topbar,
+.chatpage-shell .chat-safety,
+.chatpage-shell .chat-inputbar,
+.chatpage-shell .chat-cta {
+  flex-shrink: 0;
+}
+.chatpage-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+@media (max-width: 1024px) {
+  .chatpage-shell { max-width: 100%; }
+}
+
+@media (max-width: 600px) {
+  .chatpage-scroll { padding: 16px; }
+}

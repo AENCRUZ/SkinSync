@@ -134,26 +134,55 @@
       <h2>How It Works</h2>
       <p>A simple path from noticing a concern to getting professional care.</p>
     </div>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">01</div>
-        <h3>Tell Us Your Concern</h3>
-        <p>Describe symptoms, duration, location, and possible triggers.</p>
+    <div class="hiw-carousel" id="hiwCarousel" role="group" aria-roledescription="carousel" aria-label="How It Works steps">
+      <div class="hiw-viewport">
+        <button type="button" class="hiw-arrow hiw-prev" aria-label="Previous step">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <div class="hiw-mask">
+          <div class="hiw-track">
+            <div class="hiw-slide is-active">
+              <div class="hiw-slide-inner">
+                <div class="step-num">01</div>
+                <h3>Tell Us Your Concern</h3>
+                <p>Describe symptoms, duration, location, and possible triggers.</p>
+              </div>
+            </div>
+            <div class="hiw-slide">
+              <div class="hiw-slide-inner">
+                <div class="step-num">02</div>
+                <h3>Add a Photo</h3>
+                <p>Optionally upload a photo of the visible skin concern.</p>
+              </div>
+            </div>
+            <div class="hiw-slide">
+              <div class="hiw-slide-inner">
+                <div class="step-num">03</div>
+                <h3>Get Organized</h3>
+                <p>SKINSYNC organizes the information into a consultation summary.</p>
+              </div>
+            </div>
+            <div class="hiw-slide">
+              <div class="hiw-slide-inner">
+                <div class="step-num">04</div>
+                <h3>Prepare for Care</h3>
+                <p>Find a dermatologist and use the summary during your consultation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="hiw-arrow hiw-next" aria-label="Next step">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
       </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <h3>Add a Photo</h3>
-        <p>Optionally upload a photo of the visible skin concern.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <h3>Get Organized</h3>
-        <p>SKINSYNC organizes the information into a consultation summary.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">04</div>
-        <h3>Prepare for Care</h3>
-        <p>Find a dermatologist and use the summary during your consultation.</p>
+
+      <div class="hiw-controls">
+        <div class="hiw-dots">
+          <button type="button" class="hiw-dot active" aria-label="Go to step 1"></button>
+          <button type="button" class="hiw-dot" aria-label="Go to step 2"></button>
+          <button type="button" class="hiw-dot" aria-label="Go to step 3"></button>
+          <button type="button" class="hiw-dot" aria-label="Go to step 4"></button>
+        </div>
       </div>
     </div>
   </div>

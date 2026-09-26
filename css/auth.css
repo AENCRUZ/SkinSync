@@ -1,0 +1,188 @@
+/*
+ * SKINSYNC — Auth UI (Login / Sign Up / Forgot Password)
+/* ---------- Navbar ---------- */
+.nav-auth-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-login-item {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .nav-auth-actions {
+    display: none;
+  }
+
+  .nav-login-item {
+    display: block;
+  }
+}
+/* ---------- Auth panel shell ---------- */
+.auth-panel {
+  max-width: 440px;
+}
+.auth-panel.wide {
+  max-width: 480px;
+}
+.auth-head {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.auth-head .brand {
+  display: inline-flex;
+  margin-bottom: 16px;
+}
+.auth-head h1 {
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+}
+.auth-head p {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+/* ---------- Password field with show/hide toggle ---------- */
+.input-icon-wrap {
+  position: relative;
+}
+.input-icon-wrap input {
+  padding-right: 46px;
+}
+.input-icon-btn {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-soft);
+  border-radius: 50%;
+  transition: color 0.2s ease, background 0.2s ease;
+  padding: 0;
+}
+.input-icon-btn:hover {
+  color: var(--blue);
+  background: var(--pale-cyan);
+}
+.input-icon-btn svg {
+  width: 19px;
+  height: 19px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+}
+.input-icon-btn .icon-eye-off { display: none; }
+.input-icon-btn.is-visible .icon-eye { display: none; }
+.input-icon-btn.is-visible .icon-eye-off { display: flex; }
+
+/* ---------- Field meta row (e.g. Forgot password?) ---------- */
+.field-meta {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+.auth-link-sm {
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+/* ---------- Checkbox row (terms agreement) ---------- */
+.field-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.field-check input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--blue);
+  flex-shrink: 0;
+}
+.field-check label {
+  margin: 0;
+  font-weight: 400;
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+}
+.field-check a { font-weight: 600; }
+
+/* ---------- Switch line under the form ---------- */
+.auth-switch {
+  text-align: center;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  margin: 22px 0 0;
+}
+.auth-switch a {
+  font-weight: 700;
+}
+
+/* ---------- Field-level validation message (inert placeholder for now) ---------- */
+.field-error {
+  display: none;
+  font-size: 0.8rem;
+  color: var(--danger);
+  margin-top: 6px;
+  font-weight: 600;
+}
+.field.has-error input {
+  border-color: var(--danger);
+}
+.field.has-error .field-error {
+  display: block;
+}
+
+/* ---------- Small back-link used on Forgot Password ---------- */
+.auth-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  margin-bottom: 18px;
+}
+
+/* ---------- Success state (Forgot Password confirmation) ---------- */
+.auth-success {
+  display: none;
+  text-align: center;
+  padding: 8px 0 4px;
+}
+.auth-success.show { display: block; }
+.auth-success .success-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--success-bg);
+  color: var(--success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+}
+.auth-success .success-icon svg { width: 28px; height: 28px; }
+
+/* ---------- Inline placeholder note shown after a mock submit ---------- */
+[data-auth-note] {
+  display: none;
+  margin-top: 20px;
+}
+[data-auth-note].show {
+  display: flex;
+}
+
+@media (max-width: 600px) {
+  .auth-head h1 { font-size: 1.4rem; }
+  .field-meta { justify-content: flex-start; }
+}
